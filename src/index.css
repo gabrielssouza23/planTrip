@@ -5,3 +5,17 @@
 *{
   min-width: 0;
 }
+
+:root{
+  --rdp-accent-color: #BEF264;
+}
+
+.rdp-day_selected,
+.rdp-day_selected:not(.rdp-day_outside) {
+  background-color: #BEF264;
+  color: #000; /* Ajuste a cor do texto conforme necessário */
+}
+
+.rdp-day:hover:not(.rdp-day_outside) {
+  background-color: #a4d04b; /* Cor de hover para um efeito adicional, ajuste conforme necessário */
+}
