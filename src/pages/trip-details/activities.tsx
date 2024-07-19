@@ -1,10 +1,21 @@
 import { CircleCheck, Plus } from "lucide-react";
+import { api } from "../../lib/axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 interface ActivitiesProps {
     openCreateActivityModal: () => void;
 }
 
 export function Activities( { openCreateActivityModal }: ActivitiesProps) {
+
+    const { tripId } = useParams();
+    const [activities, setActivities] = useState<Participant[]>([]);
+
+    useEffect(() => {
+        api.get(`/trips/${tripId}/activities`).then(response => setActivities(response.data.activities));
+    }, [tripId]);
+
     return(
         <div className="flex-1 space-y-6">
         <div className="flex items-center justify-between">

@@ -24,7 +24,8 @@ export function CreateTripPage() {
 
 
     const [emailsToInvite, setEmailsToInvite] = useState([
-        'gabriel.desouzasilva2014@gmail.com'
+        'gabriel.desouzasilva2014@gmail.com',
+        'teste@gmail.com'
     ]);
 
     function openGuestsInput() {
@@ -97,12 +98,12 @@ export function CreateTripPage() {
           }
 
           const response = await api.post('/trips', {
-            destination,
+            destination: destination,
             starts_at: eventStartAndEndDates.from,
             ends_at: eventStartAndEndDates.to,
-            emails_to_invite: emailsToInvite,
             owner_name: ownerName,
-            owner_email: ownerEmail
+            owner_email: ownerEmail,
+            emails_to_invite: emailsToInvite,
           })
       
           const { tripId } = response.data
