@@ -24,7 +24,6 @@ export function CreateActivityModal( { closeCreateActivityModal }: CreateActivit
       await api.post(`/trips/${tripId}/activities`, {
           occurs_at,
         title,
-        // trip_id: tripId
       })
   
       window.document.location.reload()
@@ -58,7 +57,7 @@ export function CreateActivityModal( { closeCreateActivityModal }: CreateActivit
                     </div>
                 </div>
 
-                <Button variant="primary" size="full">
+                <Button type="submit" variant="primary" size="full">
                     Salvar atividade
                 </Button>
 
